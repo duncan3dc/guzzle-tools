@@ -16,6 +16,55 @@ $ composer require duncan3dc/guzzle-tools
 ```
 
 
+## Quick Examples
+
+When working with Guzzle I got bored of searching for the solution to output the request/response every time I wanted a quick debug, this library makes it easy:
+
+
+```php
+$client = \duncan3dc\Guzzle\Factory::getClient();
+
+$client->request("GET", "http://example.com/");
+```
+
+Running the above would output this on the command line:
+```
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+GET / HTTP/1.1
+User-Agent: GuzzleHttp/6.2.1 curl/7.47.0 PHP/7.1.0RC3
+Host: example.com
+--------------------------------------------------------------------------------
+HTTP/1.1 200 OK
+Cache-Control: max-age=604800
+Content-Type: text/html
+Date: Mon, 09 Jan 2017 14:42:17 GMT
+Etag: "359670651+gzip+ident"
+Expires: Mon, 16 Jan 2017 14:42:17 GMT
+Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
+Server: ECS (ewr/15BD)
+Vary: Accept-Encoding
+X-Cache: HIT
+x-ec-custom-error: 1
+Content-Length: 1270
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+</head>
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is established to be used for illustrative examples in documents. You may use this
+    domain in examples without prior coordination or asking for permission.</p>
+    <p><a href="http://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+```
+
+
 ## Changelog
 A [Changelog](CHANGELOG.md) has been available since the beginning of time
 
