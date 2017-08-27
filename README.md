@@ -1,5 +1,5 @@
 # guzzle-tools
-A PHP library to log request and responses from [Guzzle](http://guzzlephp.org/).
+A PHP library offering some add-ons for [Guzzle](http://guzzlephp.org/).
 
 [![Build Status](https://img.shields.io/travis/duncan3dc/guzzle-tools.svg)](https://travis-ci.org/duncan3dc/guzzle-tools)
 [![Latest Version](https://img.shields.io/packagist/v/duncan3dc/guzzle-tools.svg)](https://packagist.org/packages/duncan3dc/guzzle-tools)
@@ -17,6 +17,8 @@ $ composer require duncan3dc/guzzle-tools
 
 
 ## Quick Examples
+
+### Logging
 
 When working with Guzzle I got bored of searching for the solution to output the request/response every time I wanted a quick debug, this library makes it easy:
 
@@ -62,6 +64,21 @@ Content-Length: 1270
 </body>
 </html>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+```
+
+### Request Building
+
+As of version 6.0.0 Guzzle no longer offers a way to build a request instance to send later, this library provides a simple workaround:
+
+```php
+$request = \duncan3dc\Guzzle\Request::make("GET", "https://example.com/", [
+    "query" =>  [
+        "date"  =>  date("Y-m-d"),
+    ],
+]);
+
+# There's also an alias on the main factory class
+$request = \duncan3dc\Guzzle\Factory::request("GET", "https://example.com/");
 ```
 
 

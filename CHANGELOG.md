@@ -5,6 +5,14 @@ Changelog
 
 --------
 
+## 0.2.0 - 2017-09-16
+
+# Added
+
+[Request] A factory class to generate request instances from.
+
+--------
+
 ## 0.1.0 - 2017-02-08
 
 # Added
