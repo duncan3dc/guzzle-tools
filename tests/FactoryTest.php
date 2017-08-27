@@ -7,6 +7,7 @@ use duncan3dc\Guzzle\Logger;
 use duncan3dc\Guzzle\MessageFormatter;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
+use Psr\Http\Message\RequestInterface;
 
 class FactoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -43,5 +44,12 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
     {
         $message = Factory::getMessageFormatter();
         $this->assertInstanceOf(MessageFormatter::class, $message);
+    }
+
+
+    public function testRequest()
+    {
+        $message = Factory::request("GET", "https://example.com/");
+        $this->assertInstanceOf(RequestInterface::class, $message);
     }
 }
