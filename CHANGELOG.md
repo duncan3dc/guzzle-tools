@@ -5,6 +5,13 @@ Changelog
 
 --------
 
+## 0.3.0 - 2018-01-08
+
+# Added
+
+[Http] A Http class for simple requests.
+
+--------
 ## 0.2.0 - 2017-09-16
 
 # Added

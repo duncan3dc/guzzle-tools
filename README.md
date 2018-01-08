@@ -81,6 +81,20 @@ $request = \duncan3dc\Guzzle\Request::make("GET", "https://example.com/", [
 $request = \duncan3dc\Guzzle\Factory::request("GET", "https://example.com/");
 ```
 
+### Simple Requests
+
+When all you need is a basic GET/POST, you can use the `Http` class:
+
+```php
+$response = \duncan3dc\Guzzle\Http::get("https://example.com/", [
+    "date"  =>  date("Y-m-d"),
+]);
+
+$response = \duncan3dc\Guzzle\Http::post("https://example.com/", [
+    "date"  =>  date("Y-m-d"),
+]);
+```
+
 
 ## Changelog
 A [Changelog](CHANGELOG.md) has been available since the beginning of time
