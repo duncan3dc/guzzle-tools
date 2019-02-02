@@ -7,9 +7,10 @@ use duncan3dc\Guzzle\Logger;
 use duncan3dc\Guzzle\MessageFormatter;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
-class FactoryTest extends \PHPUnit_Framework_TestCase
+class FactoryTest extends TestCase
 {
 
     public function testGetClient()

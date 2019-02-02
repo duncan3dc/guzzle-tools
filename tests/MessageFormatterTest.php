@@ -5,8 +5,9 @@ namespace duncan3dc\GuzzleTests;
 use duncan3dc\Guzzle\MessageFormatter;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
-class MessageFormatterTest extends \PHPUnit_Framework_TestCase
+class MessageFormatterTest extends TestCase
 {
 
     public function testFormatRequest()

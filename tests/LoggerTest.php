@@ -3,8 +3,9 @@
 namespace duncan3dc\GuzzleTests;
 
 use duncan3dc\Guzzle\Logger;
+use PHPUnit\Framework\TestCase;
 
-class LoggerTest extends \PHPUnit_Framework_TestCase
+class LoggerTest extends TestCase
 {
 
     public function testLog()
