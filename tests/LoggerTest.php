@@ -10,7 +10,7 @@ class LoggerTest extends TestCase
 
     public function testLog()
     {
-        $logger = new Logger;
+        $logger = new Logger();
 
         $this->expectOutputString("Ok");
         $logger->log(0, "Ok");

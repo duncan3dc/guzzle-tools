@@ -39,7 +39,7 @@ class Http
     public static function getClient()
     {
         if (!self::$client) {
-            self::$client = new Client;
+            self::$client = new Client();
         }
 
         return self::$client;

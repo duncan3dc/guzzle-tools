@@ -30,13 +30,13 @@ class Factory
 
     public static function getLogger()
     {
-        return new Logger;
+        return new Logger();
     }
 
 
     public static function getMessageFormatter()
     {
-        return new MessageFormatter;
+        return new MessageFormatter();
     }
 
 

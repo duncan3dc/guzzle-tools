@@ -12,7 +12,7 @@ class MessageFormatterTest extends TestCase
 
     public function testFormatRequest()
     {
-        $message = new MessageFormatter;
+        $message = new MessageFormatter();
 
         $request = new Request("POST", "http://example.com/", [
             "Header1"   =>  "One",
@@ -38,7 +38,7 @@ class MessageFormatterTest extends TestCase
 
     public function testFormatRequestAndResponse()
     {
-        $message = new MessageFormatter;
+        $message = new MessageFormatter();
 
         $request = new Request("POST", "http://example.com/", [
             "Header1"   =>  "One",
