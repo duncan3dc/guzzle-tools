@@ -21,5 +21,12 @@ script:
   - vendor/bin/phpunit
   - vendor/bin/composer-require-checker
 
+jobs:
+  include:
+
+    - stage: code quality
+      script:
+        - vendor/bin/phpstan analyse --level=max src tests
+
 git:
   depth: 5

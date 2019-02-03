@@ -4,6 +4,7 @@ namespace duncan3dc\Guzzle;
 
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
+use function count;
 
 class Request
 {
@@ -82,14 +83,15 @@ class Request
             $modify["query"] = $value;
         }
 
+        $set = [];
         foreach ($headers as $key => $val) {
             if ($request->hasHeader($key)) {
                 continue;
             }
-            if (!array_key_exists("set_headers", $modify)) {
-                $modify["set_headers"] = [];
-            }
-            $modify["set_headers"][$key] = $val;
+            $set[$key] = $val;
+        }
+        if (count($set) > 0) {
+            $modify["set_headers"] = $set;
         }
 
         return Psr7\modify_request($request, $modify);

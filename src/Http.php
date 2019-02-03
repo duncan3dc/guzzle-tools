@@ -84,7 +84,7 @@ class Http
      * Send a GET request and get the body back as a string.
      *
      * @param string $url The URL to hit
-     * @param array $options Any query params to send
+     * @param array $params Any query params to send
      *
      * @return string
      */
@@ -100,7 +100,7 @@ class Http
      * Send a POST request and get the body back as a string.
      *
      * @param string $url The URL to hit
-     * @param array $options Any form params to send
+     * @param array $params Any form params to send
      *
      * @return string
      */
