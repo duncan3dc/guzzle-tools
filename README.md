@@ -1,8 +1,9 @@
 # guzzle-tools
 A PHP library offering some add-ons for [Guzzle](http://guzzlephp.org/).
 
-[![Build Status](https://img.shields.io/travis/duncan3dc/guzzle-tools.svg)](https://travis-ci.org/duncan3dc/guzzle-tools)
-[![Latest Version](https://img.shields.io/packagist/v/duncan3dc/guzzle-tools.svg)](https://packagist.org/packages/duncan3dc/guzzle-tools)
+[![release](https://poser.pugx.org/duncan3dc/guzzle-tools/version.svg)](https://packagist.org/packages/duncan3dc/guzzle-tools)
+[![build](https://travis-ci.org/duncan3dc/guzzle-tools.svg?branch=master)](https://travis-ci.org/duncan3dc/guzzle-tools)
+[![coverage](https://codecov.io/gh/duncan3dc/guzzle-tools/graph/badge.svg)](https://codecov.io/gh/duncan3dc/guzzle-tools)
 
 
 ## Installation

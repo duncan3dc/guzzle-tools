@@ -32,6 +32,11 @@ jobs:
       script:
         - vendor/bin/phpstan analyse --level=max src tests
 
+    - stage: coverage
+      script:
+        - vendor/bin/phpunit --coverage-clover=coverage.xml
+        - bash <(curl -s https://codecov.io/bash)
+
 git:
   depth: 5
 
