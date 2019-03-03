@@ -78,7 +78,7 @@ class Request
         if (isset($options["query"])) {
             $value = $options["query"];
             if (is_array($value)) {
-                $value = http_build_query($value, null, "&", PHP_QUERY_RFC3986);
+                $value = http_build_query($value, "", "&", PHP_QUERY_RFC3986);
             }
             $modify["query"] = $value;
         }
