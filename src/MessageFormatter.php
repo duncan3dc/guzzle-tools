@@ -5,6 +5,8 @@ namespace duncan3dc\Guzzle;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use function str_repeat;
+use function trim;
 
 class MessageFormatter extends \GuzzleHttp\MessageFormatter
 {

@@ -5,6 +5,8 @@ namespace duncan3dc\Guzzle;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use function count;
+use function http_build_query;
+use function is_array;
 
 class Request
 {
