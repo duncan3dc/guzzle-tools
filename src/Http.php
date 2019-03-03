@@ -25,7 +25,7 @@ class Http
      *
      * @return void
      */
-    public static function setClient(ClientInterface $client)
+    public static function setClient(ClientInterface $client): void
     {
         self::$client = $client;
     }
@@ -36,7 +36,7 @@ class Http
      *
      * @return ClientInterface
      */
-    public static function getClient()
+    public static function getClient(): ClientInterface
     {
         if (!self::$client) {
             self::$client = new Client();
@@ -53,7 +53,7 @@ class Http
      *
      * @return void
      */
-    public static function useragent($useragent)
+    public static function useragent(string $useragent): void
     {
         self::$useragent = $useragent;
     }
@@ -68,7 +68,7 @@ class Http
      *
      * @return string
      */
-    public static function request($method, $url, array $options = [])
+    public static function request(string $method, string $url, array $options = []): string
     {
         if (self::$useragent && !isset($options["headers"]["User-Agent"])) {
             $options["headers"] = ["User-Agent" => self::$useragent];
@@ -88,7 +88,7 @@ class Http
      *
      * @return string
      */
-    public static function get($url, array $params = [])
+    public static function get(string $url, array $params = []): string
     {
         return self::request("GET", $url, [
             "query" =>  $params,
@@ -104,7 +104,7 @@ class Http
      *
      * @return string
      */
-    public static function post($url, array $params = [])
+    public static function post(string $url, array $params = []): string
     {
         return self::request("POST", $url, [
             "form_params"   =>  $params,

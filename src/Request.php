@@ -17,7 +17,7 @@ class Request
      *
      * @return RequestInterface
      */
-    public static function make($method, $uri, array $options = [])
+    public static function make(string $method, string $uri, array $options = []): RequestInterface
     {
         if (isset($options["headers"])) {
             $headers = $options["headers"];
@@ -56,7 +56,7 @@ class Request
      *
      * @return RequestInterface
      */
-    private static function applyOptions(RequestInterface $request, array $options)
+    private static function applyOptions(RequestInterface $request, array $options): RequestInterface
     {
         $modify = [];
         $headers = [];
