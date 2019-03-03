@@ -9,7 +9,7 @@ class RequestTest extends TestCase
 {
     private $request;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->request = Request::make("GET", "http://example.com", [
             "headers"       =>  [
