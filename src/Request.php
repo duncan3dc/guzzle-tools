@@ -4,7 +4,6 @@ namespace duncan3dc\Guzzle;
 
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
-use function count;
 use function http_build_query;
 use function is_array;
 
@@ -61,16 +60,19 @@ class Request
     private static function applyOptions(RequestInterface $request, array $options): RequestInterface
     {
         $modify = [];
-        $headers = [];
 
         if (isset($options["form_params"])) {
             $options["body"] = http_build_query($options["form_params"], "", "&");
-            $headers["content-type"] = "application/x-www-form-urlencoded";
+            if (!$request->hasHeader("content-type")) {
+                $modify["set_headers"] = ["content-type" => "application/x-www-form-urlencoded"];
+            }
         }
 
         if (isset($options["json"])) {
             $options["body"] = \GuzzleHttp\json_encode($options["json"]);
-            $headers["content-type"] = "application/json";
+            if (!$request->hasHeader("content-type")) {
+                $modify["set_headers"] = ["content-type" => "application/json"];
+            }
         }
 
         if (isset($options["body"])) {
@@ -83,17 +85,6 @@ class Request
                 $value = http_build_query($value, "", "&", PHP_QUERY_RFC3986);
             }
             $modify["query"] = $value;
-        }
-
-        $set = [];
-        foreach ($headers as $key => $val) {
-            if ($request->hasHeader($key)) {
-                continue;
-            }
-            $set[$key] = $val;
-        }
-        if (count($set) > 0) {
-            $modify["set_headers"] = $set;
         }
 
         return Psr7\modify_request($request, $modify);

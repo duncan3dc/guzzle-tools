@@ -76,7 +76,7 @@ class Http
 
         $response = self::getClient()->request($method, $url, $options);
 
-        return (string) $response->getBody();
+        return $response->getBody();
     }
 
 

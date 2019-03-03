@@ -24,6 +24,10 @@ script:
 jobs:
   include:
 
+    - stage: mutations
+      script:
+        - vendor/bin/infection
+
     - stage: coding standards
       script:
         - vendor/bin/phpcs --standard=PSR1,PSR2,PSR12 src tests

@@ -4,11 +4,17 @@ namespace duncan3dc\GuzzleTests;
 
 use duncan3dc\Guzzle\Request;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 
 class RequestTest extends TestCase
 {
+    /** @var RequestInterface */
     private $request;
 
+
+    /**
+     * @inheritdoc
+     */
     public function setUp(): void
     {
         $this->request = Request::make("GET", "http://example.com", [
@@ -85,5 +91,23 @@ class RequestTest extends TestCase
         ]);
 
         $this->assertSame("http://example.com?key1=val1&key2=val2", (string) $request->getUri());
+    }
+
+
+    /**
+     * Ensure we can override the content-type
+     */
+    public function testContentType1(): void
+    {
+        $request = Request::make("POST", "http://example.com", [
+            "form_params"   =>  [
+                "key1"  =>  "val1",
+                "key2"  =>  "val2",
+            ],
+            "headers" => [
+                "content-type" => "custom/format-1b",
+            ],
+        ]);
+        $this->assertSame("custom/format-1b", $request->getHeader("content-type")[0]);
     }
 }

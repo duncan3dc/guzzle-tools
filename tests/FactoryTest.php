@@ -6,12 +6,12 @@ use duncan3dc\Guzzle\Factory;
 use duncan3dc\Guzzle\Logger;
 use duncan3dc\Guzzle\MessageFormatter;
 use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
 class FactoryTest extends TestCase
 {
+
 
     public function testGetClient()
     {
@@ -20,10 +20,19 @@ class FactoryTest extends TestCase
     }
 
 
-    public function testGetStack()
+    /**
+     * Ensure that by default our stack includes the logger.
+     */
+    public function testGetStack1()
     {
         $stack = Factory::getStack();
-        $this->assertInstanceOf(HandlerStack::class, $stack);
+
+        $client = new Client([
+            "handler" => $stack,
+        ]);
+
+        $this->expectOutputRegex("/<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</");
+        $client->request("GET", "https://google.com/");
     }
 
 
