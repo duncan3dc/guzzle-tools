@@ -11,8 +11,6 @@ use Psr\Http\Message\RequestInterface;
 
 class FactoryTest extends TestCase
 {
-
-
     public function testGetClient()
     {
         $client = Factory::getClient();

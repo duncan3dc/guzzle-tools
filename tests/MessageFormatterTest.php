@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class MessageFormatterTest extends TestCase
 {
-
     public function testFormatRequest()
     {
         $message = new MessageFormatter();
