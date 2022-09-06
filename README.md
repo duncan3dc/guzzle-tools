@@ -2,7 +2,7 @@
 A PHP library offering some add-ons for [Guzzle](http://guzzlephp.org/).
 
 [![release](https://poser.pugx.org/duncan3dc/guzzle-tools/version.svg)](https://packagist.org/packages/duncan3dc/guzzle-tools)
-[![build](https://travis-ci.org/duncan3dc/guzzle-tools.svg?branch=master)](https://travis-ci.org/duncan3dc/guzzle-tools)
+[![build](https://github.com/duncan3dc/guzzle-tools/workflows/.github/workflows/buildcheck.yml/badge.svg?branch=main)](https://github.com/duncan3dc/guzzle-tools/actions/workflows/coverage.yml)
 [![coverage](https://codecov.io/gh/duncan3dc/guzzle-tools/graph/badge.svg)](https://codecov.io/gh/duncan3dc/guzzle-tools)
 
 
