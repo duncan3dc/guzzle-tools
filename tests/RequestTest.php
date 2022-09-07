@@ -25,25 +25,25 @@ class RequestTest extends TestCase
     }
 
 
-    public function testMethod()
+    public function testMethod(): void
     {
         $this->assertSame("GET", $this->request->getMethod());
     }
 
 
-    public function testUri()
+    public function testUri(): void
     {
         $this->assertSame("http://example.com", (string) $this->request->getUri());
     }
 
 
-    public function testUserAgent()
+    public function testUserAgent(): void
     {
         $this->assertSame("superbrowser/1.0", $this->request->getHeader("user-agent")[0]);
     }
 
 
-    public function testFormParams()
+    public function testFormParams(): void
     {
         $request = Request::make("POST", "http://example.com", [
             "form_params"   =>  [
@@ -57,7 +57,7 @@ class RequestTest extends TestCase
     }
 
 
-    public function testJson()
+    public function testJson(): void
     {
         $request = Request::make("POST", "http://example.com", [
             "json"   =>  [
@@ -71,7 +71,7 @@ class RequestTest extends TestCase
     }
 
 
-    public function testBody()
+    public function testBody(): void
     {
         $request = Request::make("POST", "http://example.com", [
             "body"  =>  "Hello There!",
@@ -81,7 +81,7 @@ class RequestTest extends TestCase
     }
 
 
-    public function testQuery()
+    public function testQuery(): void
     {
         $request = Request::make("GET", "http://example.com", [
             "query" =>  [

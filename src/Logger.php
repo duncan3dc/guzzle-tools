@@ -9,7 +9,10 @@ class Logger implements LoggerInterface
 {
     use LoggerTrait;
 
-    public function log($level, $message, array $context = [])
+    /**
+     * @param array<string, string> $context
+     */
+    public function log($level, $message, array $context = []): void
     {
         echo $message;
     }

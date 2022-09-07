@@ -49,7 +49,7 @@ class Factory
      *
      * @param string $method The HTTP method to use
      * @param string $uri The URI to hit
-     * @param array $options The options to build the request with
+     * @param array<string, mixed> $options The options to build the request with
      *
      * @return RequestInterface
      */

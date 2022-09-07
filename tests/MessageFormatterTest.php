@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class MessageFormatterTest extends TestCase
 {
-    public function testFormatRequest()
+    public function testFormatRequest(): void
     {
         $message = new MessageFormatter();
 
@@ -35,7 +35,7 @@ class MessageFormatterTest extends TestCase
     }
 
 
-    public function testFormatRequestAndResponse()
+    public function testFormatRequestAndResponse(): void
     {
         $message = new MessageFormatter();
 

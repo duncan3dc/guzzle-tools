@@ -15,7 +15,7 @@ class Request
      *
      * @param string $method The HTTP method to use
      * @param string $uri The URI to hit
-     * @param array $options The options to build the request with
+     * @param array<string, mixed> $options The options to build the request with
      *
      * @return RequestInterface
      */
@@ -54,7 +54,7 @@ class Request
      * Apply an array of options to a request instance.
      *
      * @param RequestInterface $request The request to modify
-     * @param array $options The options to apply
+     * @param array<string, mixed> $options The options to apply
      *
      * @return RequestInterface
      */

@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class LoggerTest extends TestCase
 {
-    public function testLog()
+    public function testLog(): void
     {
         $logger = new Logger();
 

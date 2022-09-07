@@ -8,12 +8,12 @@ use GuzzleHttp\ClientInterface;
 class Http
 {
     /**
-     * @param ClientInterface $client The underlying guzzle instance.
+     * @var ?ClientInterface The underlying guzzle instance.
      */
     private static $client;
 
     /**
-     * @param string $useragent The default user agent to use on requests.
+     * @var string The default user agent to use on requests.
      */
     private static $useragent;
 
@@ -64,7 +64,7 @@ class Http
      *
      * @param string $method The HTTP method to use
      * @param string $url The URL to hit
-     * @param array $options Any additonal guzzle options to use
+     * @param array<string, mixed> $options Any additonal guzzle options to use
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class Http
      * Send a GET request and get the body back as a string.
      *
      * @param string $url The URL to hit
-     * @param array $params Any query params to send
+     * @param array<string, mixed> $params Any query params to send
      *
      * @return string
      */
@@ -100,7 +100,7 @@ class Http
      * Send a POST request and get the body back as a string.
      *
      * @param string $url The URL to hit
-     * @param array $params Any form params to send
+     * @param array<string, mixed> $params Any form params to send
      *
      * @return string
      */

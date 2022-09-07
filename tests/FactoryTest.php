@@ -11,7 +11,7 @@ use Psr\Http\Message\RequestInterface;
 
 class FactoryTest extends TestCase
 {
-    public function testGetClient()
+    public function testGetClient(): void
     {
         $client = Factory::getClient();
         $this->assertInstanceOf(Client::class, $client);
@@ -21,7 +21,7 @@ class FactoryTest extends TestCase
     /**
      * Ensure that by default our stack includes the logger.
      */
-    public function testGetStack1()
+    public function testGetStack1(): void
     {
         $stack = Factory::getStack();
 
@@ -34,28 +34,28 @@ class FactoryTest extends TestCase
     }
 
 
-    public function testGetMiddleware()
+    public function testGetMiddleware(): void
     {
         $middleware = Factory::getMiddleware();
         $this->assertInstanceOf(\Closure::class, $middleware);
     }
 
 
-    public function testGetLogger()
+    public function testGetLogger(): void
     {
         $logger = Factory::getLogger();
         $this->assertInstanceOf(Logger::class, $logger);
     }
 
 
-    public function testGetMessageFormatter()
+    public function testGetMessageFormatter(): void
     {
         $message = Factory::getMessageFormatter();
         $this->assertInstanceOf(MessageFormatter::class, $message);
     }
 
 
-    public function testRequest()
+    public function testRequest(): void
     {
         $message = Factory::request("GET", "https://example.com/");
         $this->assertInstanceOf(RequestInterface::class, $message);
