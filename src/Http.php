@@ -5,6 +5,9 @@ namespace duncan3dc\Guzzle;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 
+use function array_key_exists;
+use function is_array;
+
 class Http
 {
     /**
@@ -70,8 +73,11 @@ class Http
      */
     public static function request(string $method, string $url, array $options = []): string
     {
-        if (self::$useragent && !isset($options["headers"]["User-Agent"])) {
-            $options["headers"] = ["User-Agent" => self::$useragent];
+        if (self::$useragent) {
+            if (!array_key_exists("headers", $options) || !is_array($options["headers"])) {
+                $options["headers"] = [];
+            }
+            $options["headers"]["User-Agent"] = self::$useragent;
         }
 
         $response = self::getClient()->request($method, $url, $options);

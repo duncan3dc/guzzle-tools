@@ -84,6 +84,27 @@ class HttpTest extends TestCase
 
 
     /**
+     * Ensure headers aren't lost by the user agent handling
+     */
+    public function testRequest3(): void
+    {
+        $this->client->shouldReceive("request")->once()
+            ->with("GET", "http://example.com", [
+                "headers" => [
+                    "Content-Type" => "application/json",
+                    "User-Agent" => "example/user-agent",
+                ],
+            ])
+            ->andReturn(new Response());
+
+        Http::useragent("example/user-agent");
+        Http::request("GET", "http://example.com", [
+            "headers" => ["Content-Type" => "application/json"],
+        ]);
+    }
+
+
+    /**
      * Ensure a basic GET request is handled correctly.
      */
     public function testGet1(): void
