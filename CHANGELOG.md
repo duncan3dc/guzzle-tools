@@ -5,6 +5,22 @@ Changelog
 
 --------
 
+## 0.5.0 - 2023-04-11
+
+# Changed
+
+* [Dependencies] Switched to Guzzle 7.
+
+# Added
+
+* [Support] Added support for PHP 8.2.
+
+# Removed
+
+* [Support] Dropped support for PHP 7.3, and 7.4.
+
+--------
+
 ## 0.4.0 - 2022-09-07
 
 # Changed
