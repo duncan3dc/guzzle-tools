@@ -15,6 +15,9 @@ class FactoryTest extends TestCase
     {
         $client = Factory::getClient();
         $this->assertInstanceOf(Client::class, $client);
+
+        $this->expectOutputRegex("/<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</");
+        $client->request("GET", "https://google.com/");
     }
 
 

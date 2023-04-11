@@ -15,7 +15,7 @@ class MessageFormatterTest extends TestCase
 
         $request = new Request("POST", "http://example.com/", [
             "Header1"   =>  "One",
-        ], "body");
+        ], "body\n");
 
         $expected = [
             "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
@@ -45,7 +45,7 @@ class MessageFormatterTest extends TestCase
 
         $response = new Response(404, [
             "Format"    =>  "JSON",
-        ], "no-text");
+        ], "no-text\n");
 
         $expected = [
             "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
