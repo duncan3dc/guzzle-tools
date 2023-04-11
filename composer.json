@@ -23,8 +23,8 @@
         "infection/infection": "^0.18.2",
         "maglnet/composer-require-checker": "^4.0",
         "mockery/mockery": "^1.4.4",
-        "phpstan/phpstan": "^0.12.99",
-        "phpstan/phpstan-mockery": "^0.12.7",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-mockery": "^1.1",
         "squizlabs/php_codesniffer": "^3.7",
         "phpunit/phpunit": "^9.0"
     },
@@ -38,7 +38,7 @@
         "test": [
             "vendor/bin/phpunit",
             "vendor/bin/composer-require-checker",
-            "vendor/bin/phpstan analyse --level=max src",
+            "vendor/bin/phpstan analyse --level=max --configuration=phpstan-src.neon src",
             "vendor/bin/phpstan analyse --level=max --configuration=phpstan-tests.neon tests",
             "vendor/bin/phpcs",
             "vendor/bin/infection",
