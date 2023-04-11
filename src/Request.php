@@ -3,6 +3,7 @@
 namespace duncan3dc\Guzzle;
 
 use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\RequestInterface;
 
 use function http_build_query;
@@ -77,7 +78,7 @@ class Request
         }
 
         if (isset($options["body"])) {
-            $modify["body"] = Psr7\stream_for($options["body"]);
+            $modify["body"] = Utils::streamFor($options["body"]);
         }
 
         if (isset($options["query"])) {
@@ -88,6 +89,6 @@ class Request
             $modify["query"] = $value;
         }
 
-        return Psr7\modify_request($request, $modify);
+        return Utils::modifyRequest($request, $modify);
     }
 }
